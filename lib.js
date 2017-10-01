@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < dom.length; i++) {
         new dom_object(dom.item(i), 0);
     }
+    let style = document.createElement("style");
+    style.innerHTML = " * {-webkit-touch-callout: none -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}";
+    document.head.appendChild(style);
 }, false);
 document.addEventListener("mousemove", (event) => {
     mx = event.pageX;
