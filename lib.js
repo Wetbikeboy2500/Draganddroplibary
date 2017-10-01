@@ -14,8 +14,8 @@ class dom_object {
     constructor (dom, index) {
         this.dom = dom;//this will refer to the object
         this.index = index;//this will be its position in the array
-        this.x = this.dom.getBoundingClientRect().left;
-        this.y = this.dom.getBoundingClientRect().top;
+        this.x = 0;
+		this.y = 0;
         this.dom.addEventListener("mousedown", () => {
             this.move();
         }, false);
@@ -44,6 +44,8 @@ class dom_object {
     
     move () {
         this.setup();
+		this.x = this.dom.getBoundingClientRect().left;
+        this.y = this.dom.getBoundingClientRect().top;
         clearInterval(this.clock);
         this.clock = setInterval ( () => {
             this.update();
